@@ -1,0 +1,66 @@
+package ilstu.edu;
+
+public abstract class Patient {
+
+	private int id;
+	private String fName;
+	private String lName;
+	private String physician;
+	protected int age;
+	private boolean pcr;
+
+	public Patient(int id, String fName, String lName, String physician, int age) {
+
+		this.id = id;
+		this.fName = fName;
+		this.lName = lName;
+		this.physician = physician;
+		this.age = age;
+	}
+
+	public boolean getPcr() {
+		return pcr;
+	}
+
+	public void setPcr(boolean pcr) {
+		this.pcr = pcr;
+	}
+
+	public int getID() {
+		return id;
+	}
+
+	public void setID(int id) {
+		this.id = id;
+	}
+
+	public String getFName() {
+		return fName;
+	}
+
+	public void setFName(String fName) {
+		this.fName = fName;
+	}
+
+	public String getLName() {
+		return lName;
+	}
+
+	public void setLName(String lName) {
+		this.lName = lName;
+	}
+
+	public String getPhysician() {
+		return physician;
+	}
+
+	public void setPhysician(String physician) {
+		this.physician = physician;
+	}
+
+	public String toString() {
+		return ("ID: " + id + "\nFull name: " + fName + " " + lName + "\nAge: " + age + "\nPhysician: " + physician);
+	}
+
+	public abstract String treat();
+}
