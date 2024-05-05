@@ -1,0 +1,38 @@
+package ilstu.edu;
+
+public class Covid19Patient extends Patient {
+
+	private double temperature;
+
+	public Covid19Patient(int id, String fName, String lName, String physician, int age, double temperature) {
+
+		super(id, fName, lName, physician, age);
+		this.temperature = temperature;
+	}
+
+	public double getTemperature() {
+		return temperature;
+	}
+
+	public void setTemperature(double temperature) {
+		this.temperature = temperature;
+	}
+
+	@Override
+	public String treat() {
+
+		if (getTemperature() > 40) {
+			return "Dexamethasone";
+		} else if (age > 59 && getTemperature() > 36.5) {
+			return "Paxlovid";
+		} else {
+			return "Fluids and Acetaminophen";
+		}
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "\nTemperature: " + temperature + "\nPCR test result: "
+				+ (getPcr() ? "Positive" : "Negative") + "\nVaccinated: " + "\nTreatment: " + treat();
+	}
+}
